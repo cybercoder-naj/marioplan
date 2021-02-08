@@ -8,7 +8,7 @@ class SignIn extends Component {
 
     handleSubmit = event => {
         event.preventDefault();
-        console.log(this.state);
+        // TODO sign in user
     };
 
     handleChange = event => {

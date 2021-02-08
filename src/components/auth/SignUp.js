@@ -10,7 +10,7 @@ class SignUp extends Component {
 
     handleSubmit = event => {
         event.preventDefault();
-        console.log(this.state);
+        // TODO sign up user
     };
 
     handleChange = event => {
