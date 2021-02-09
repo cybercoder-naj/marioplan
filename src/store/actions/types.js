@@ -1,0 +1,1 @@
+export const addProject = 'ADD_PROJECT';
