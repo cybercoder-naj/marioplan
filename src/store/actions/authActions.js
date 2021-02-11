@@ -1,4 +1,4 @@
-import {authFailed, authSuccess} from "./types";
+import {authFailed, authSuccess, signedOutSuccess} from "./types";
 
 export const signIn = credentials => {
     return (dispatch, getState, {getFirebase}) => {
@@ -15,4 +15,14 @@ export const signIn = credentials => {
             dispatch({type: authFailed, err})
         });
     };
+};
+
+export const signOut = () => {
+    return (dispatch, getState, {getFirebase}) => {
+        const firebase = getFirebase();
+
+        firebase.auth().signOut().then(() => {
+            dispatch({type: signedOutSuccess})
+        });
+    }
 };
