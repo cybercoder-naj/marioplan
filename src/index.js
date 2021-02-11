@@ -3,12 +3,12 @@ import ReactDOM from 'react-dom';
 import './styles/index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import {applyMiddleware, createStore, compose} from 'redux';
+import {applyMiddleware, compose, createStore} from 'redux';
 import rootReducer from './store/reducers/rootReducer';
 import {Provider} from 'react-redux';
 import thunk from "redux-thunk";
-import {reduxFirestore, getFirestore} from "redux-firestore";
-import {getFirebase, createFirebaseInstance, ReactReduxFirebaseProvider} from "react-redux-firebase";
+import {createFirestoreInstance, getFirestore, reduxFirestore} from "redux-firestore";
+import {createFirebaseInstance, getFirebase, ReactReduxFirebaseProvider} from "react-redux-firebase";
 import fbConfig from "./config/fbConfig";
 import firebase from "firebase/app";
 
@@ -29,7 +29,7 @@ const rrfProps = {
     firebase,
     config: fbConfig,
     dispatch: store.dispatch,
-    createFirebaseInstance
+    createFirestoreInstance
 }
 
 ReactDOM.render(

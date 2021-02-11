@@ -18,7 +18,7 @@ export const createProject = project => {
             dispatch({
                 type: addProjectError,
                 error
-            })
+            });
         });
     };
 };
