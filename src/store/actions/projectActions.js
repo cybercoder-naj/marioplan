@@ -1,9 +1,9 @@
 import {addProject, addProjectError} from './types.js';
 
 export const createProject = project => {
-    return (dispatch, getState, {getFirebase, getFirestore}) => {
-        const firestore = getFirestore();
-        firestore.collection('projects').add({
+    return (dispatch, getState, {getFirestore}) => {
+        const db = getFirestore();
+        db.collection('projects').add({
             ...project,
             authorFirstName: 'Cybercoder',
             authorLastName: 'Nishant',

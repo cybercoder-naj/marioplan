@@ -1,19 +1,31 @@
-import {authFailed, authSuccess, signedOutSuccess} from "../actions/types";
+import {loginFailed, loginSuccess, signedOutSuccess, signUpFailed, signUpSuccess} from "../actions/types";
 
 const initState = {};
 
 const authReducer = (state = initState, action) => {
     switch (action.type) {
-        case authFailed:
+        case loginFailed:
             return {
                 ...state,
-                authError: 'Login Failed!'
+                authError: action.err.message
             };
 
-        case authSuccess:
+        case loginSuccess:
             return {
                 ...state,
                 authError: null
+            };
+
+        case signUpSuccess:
+            return {
+                ...state,
+                authError: null
+            };
+
+        case signUpFailed:
+            return {
+                ...state,
+                authError: action.err.message
             };
 
         case signedOutSuccess:
