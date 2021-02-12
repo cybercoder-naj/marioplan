@@ -1,5 +1,5 @@
 import React, {Component} from "react/cjs/react.production.min";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import {BrowserRouter, Route, Switch} from "react-router-dom";
 import NavBar from "./components/layout/NavBar";
 import Dashboard from "./components/dashboard/Dashboard";
 import ProjectDetails from "./components/projects/ProjectDetails";
@@ -12,13 +12,13 @@ class App extends Component {
         return (
             <BrowserRouter>
                 <div className="App">
-                    <NavBar />
+                    <NavBar/>
                     <Switch>
-                        <Route exact path="/" component={Dashboard} />
-                        <Route path="/project/:id" component={ProjectDetails} />
-                        <Route path="/signin" component={SignIn} />
-                        <Route path="/signup" component={SignUp} />
-                        <Route path="/create" component={CreateProject} />
+                        <Route exact path="/" component={Dashboard}/>
+                        <Route path="/project/:id" component={ProjectDetails}/>
+                        <Route path="/signin" component={SignIn}/>
+                        <Route path="/signup" component={SignUp}/>
+                        <Route path="/create" component={CreateProject}/>
                     </Switch>
                 </div>
             </BrowserRouter>
