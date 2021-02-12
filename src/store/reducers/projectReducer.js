@@ -4,7 +4,7 @@ const initState = {
     projects: []
 };
 
-const projectReducer = (state = initState, action) => {
+function projectReducer(state = initState, action) {
     switch (action.type) {
         case addProject:
             console.log('Created project', action.project);
@@ -18,6 +18,6 @@ const projectReducer = (state = initState, action) => {
             break;
     }
     return state;
-};
+}
 
 export default projectReducer;

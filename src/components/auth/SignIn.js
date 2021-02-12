@@ -22,12 +22,12 @@ class SignIn extends Component {
 
     render() {
         const {authError, auth} = this.props;
-        if (auth.uid) return <Redirect to="/" />
+        if (auth.uid) return <Redirect to="/"/>
         return (
             <div className="container">
                 <form onSubmit={this.handleSubmit} className="white">
                     <h5 className="grey-text text-darken-3">Sign In</h5>
-                    <br />
+                    <br/>
                     <div className="input-field">
                         <label htmlFor="email">Email</label>
                         <input type="email" id="email" onChange={this.handleChange}/>
@@ -48,17 +48,17 @@ class SignIn extends Component {
     }
 }
 
-const mapStateToProps = state => {
+function mapStateToProps(state) {
     return {
         authError: state.auth.authError,
         auth: state.firebase.auth
     };
-};
+}
 
-const mapDispatchToProps= dispatch => {
+function mapDispatchToProps(dispatch) {
     return {
         signIn: creds => dispatch(signIn(creds))
     };
-};
+}
 
 export default connect(mapStateToProps, mapDispatchToProps)(SignIn);

@@ -1,6 +1,6 @@
 import {loginFailed, loginSuccess, signedOutSuccess, signUpFailed, signUpSuccess} from "./types";
 
-export const signIn = credentials => {
+export function signIn(credentials) {
     return (dispatch, getState, {getFirebase}) => {
         const firebase = getFirebase();
 
@@ -15,9 +15,9 @@ export const signIn = credentials => {
             dispatch({type: loginFailed, err})
         });
     };
-};
+}
 
-export const signOut = () => {
+export function signOut() {
     return (dispatch, getState, {getFirebase}) => {
         const firebase = getFirebase();
 
@@ -25,9 +25,9 @@ export const signOut = () => {
             dispatch({type: signedOutSuccess})
         });
     }
-};
+}
 
-export const signUp = (newUser) => {
+export function signUp(newUser) {
     return (dispatch, getState, {getFirebase, getFirestore}) => {
         const firebase = getFirebase();
         const db = getFirestore();
@@ -52,4 +52,4 @@ export const signUp = (newUser) => {
             });
         });
     };
-};
+}

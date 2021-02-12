@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ProjectSummary = ({project}) => {
+function ProjectSummary({project}) {
     return (
         <div className="card z-depth-0 project-summary">
             <div className="card-content grey-text darken-3">
@@ -10,6 +10,6 @@ const ProjectSummary = ({project}) => {
             </div>
         </div>
     );
-};
+}
 
 export default ProjectSummary;

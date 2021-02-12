@@ -24,12 +24,12 @@ class SignUp extends Component {
 
     render() {
         const {authError, auth} = this.props;
-        if (auth.uid) return <Redirect to="/" />
+        if (auth.uid) return <Redirect to="/"/>
         return (
             <div className="container">
                 <form onSubmit={this.handleSubmit} className="white">
                     <h5 className="grey-text text-darken-3">Sign Up</h5>
-                    <br />
+                    <br/>
                     <div className="input-field">
                         <label htmlFor="email">Email</label>
                         <input type="email" id="email" onChange={this.handleChange}/>
@@ -58,17 +58,17 @@ class SignUp extends Component {
     }
 }
 
-const mapStateToProps = state => {
+function mapStateToProps(state) {
     return {
         authError: state.auth.authError,
         auth: state.firebase.auth
     };
-};
+}
 
-const mapDispatchToProps = dispatch => {
+function mapDispatchToProps(dispatch) {
     return {
         signUp: (newUser) => dispatch(signUp(newUser))
     };
-};
+}
 
 export default connect(mapStateToProps, mapDispatchToProps)(SignUp);

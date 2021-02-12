@@ -1,6 +1,6 @@
 import {addProject, addProjectError} from './types.js';
 
-export const createProject = project => {
+export function createProject(project) {
     return (dispatch, getState, {getFirestore}) => {
         const db = getFirestore();
         db.collection('projects').add({
@@ -21,4 +21,4 @@ export const createProject = project => {
             });
         });
     };
-};
+}

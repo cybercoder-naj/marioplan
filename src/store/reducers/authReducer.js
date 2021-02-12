@@ -2,7 +2,7 @@ import {loginFailed, loginSuccess, signedOutSuccess, signUpFailed, signUpSuccess
 
 const initState = {};
 
-const authReducer = (state = initState, action) => {
+function authReducer(state = initState, action) {
     switch (action.type) {
         case loginFailed:
             return {
@@ -32,6 +32,6 @@ const authReducer = (state = initState, action) => {
         default:
             return state;
     }
-};
+}
 
 export default authReducer;
